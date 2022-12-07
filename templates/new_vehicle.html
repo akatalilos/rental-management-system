@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>New vehicle</title>
+{% endblock %}
+
+
+{% block main %}
+<div class="menutitle"><h2 class="display-6">Προσθήκη οχήματος</h2></div>
+<div class="myconteiner">
+
+
+<form class="row g-3 myform" action="/new_vehicle" method="post">
+
+  <div class=col-md-6>
+    <lebel for="ak">Αριθμός κυκλοφορίας</lebel>
+    <input type="text" name="ak" class="form-control" placeholder="Αριθμός κυκλοφορίας">
+  </div>
+  <div class=col-md-6>
+    <label for="type" class="form-label">Κατηγορία</label>
+    <select class="form-select" name="type" id="type">
+      <option value="" disabled selected>Κατηγορία...</option>
+      <option value="Scooter">Scooter</option>
+      <option value="Μηχανάκι">Μηχανάκι</option>
+      <option value="Μοτοσυκλέτα">Μοτοσυκλέτα</option>
+      <option value="Αυτοκίνητο">Αυτοκίνητο</option>
+      <option value="ATV">ATV</option>
+    </select>
+  </div>
+  <div class=col-md-6>
+    <lebel for="brand">Μάρκα</lebel>
+    <input type="text" name="brand" class="form-control" placeholder="Μάρκα">
+  </div>
+  <div class=col-md-6>
+    <lebel for="model">Μοντέλο</lebel>
+    <input type="text" name="model" class="form-control" placeholder="Μοντέλο">
+  </div>
+  <div class=col-md-6>
+    <lebel for="displacement">Κυβισμός</lebel>
+    <input type="number" name="displacement" class="form-control" placeholder="Κυβισμός">
+  </div>
+  <div class=col-md-6>
+    <button type="submit" class="btn btn-primary">Εισαγωγή</button>
+  </div>
+</form>
+</div>
+
+
+
+{% endblock %}

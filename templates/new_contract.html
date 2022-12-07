@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>New contract</title>
+{% endblock %}
+
+
+{% block main %}
+
+<div class="menutitle"><h2 class="display-6">Νέο συμβόλαιο</h2></div>
+<div class="myconteiner">
+
+<form class="row g-3 myform" action="/new_contract" method="post">
+  <div class=col-md-6>
+    <label for="rentday">Hμερομηνία και ώρα ενοίκιαης:</label>
+    <input type="datetime-local" id="rentday" class="form-control" name="rentday">
+  </div>
+  <div class="col-md-6"> 
+    <label for="returnday">Hμερομηνία και ώρα επιστροφής:</label>
+    <input type="datetime-local" id="returnday" class="form-control" name="returnday" placeholder="off">
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-secondary" id="btn1" type="button">Δειτέ τα Διαθέσημα οχήματα</button>
+  </div>
+
+  <div class="col-md-9">
+    <label for="vehicles" class="form-label">Διαθέσημα οχήματα</label>
+    <select name="vehicle" id="vehicles" class="form-select">
+      <optgroup label="Οχήμτα"></optgroup>
+    </select>
+  </div>
+      <div class="col-md-6">
+        <label for="firstname" class="form-label">Όνομα</label>
+        <input type="text" class="form-control" name="firstname" placeholder="Όνομα">
+      </div>
+
+      <div class="col-md-6">
+        <label for="lastname" class="form-label">Επώνυμο</label>
+        <input type="text" class="form-control" name="lastname" placeholder="Επώνυμο">
+      </div>
+
+    <div class="col-6">
+      <label for="adress1" class="form-label">Διέυθηνση 1</label>
+      <input type="text" class="form-control" name="adress1" placeholder="Διέυθηνση 1">
+    </div>
+    <div class="col-6">
+      <label for="adress2" class="form-label">Διέυθηνση 2</label>
+      <input type="text" class="form-control" name="adress2" placeholder="Διέυθηνση 2">
+    </div>
+      <div class="col-md-6">
+        <label for="tel1" class="form-label">Τηλέφωνο 1</label>
+        <input type="tel" class="form-control" name="tel1" placeholder="Τηλέφωνο 1">
+      </div>
+      <div class="col-md-6">
+        <label for="tel2" class="form-label">Τηλέφωνο 2</label>
+        <input type="tel" class="form-control" name="tel2" placeholder="Τηλέφωνο 2">
+      </div>
+      <div class="col-md-6">
+        <label for="licence" class="form-label">Αρ.Διπλώματος</label>
+        <input type="text" class="form-control" name="licence" placeholder="Αρ.Διπλώματος">
+      </div>
+      <div class="col-md-6">
+        <label for="id/passport" class="form-label">Αρ.Ταυτότητας ή Διαβατηρίου</label>
+        <input type="text" class="form-control" name="idorpassport" placeholder="Αρ.Ταυτότητας ή Διαβατηρίου">
+      </div>
+      <div class="col-md-3">
+        <label for="chargepd" class="form-label">Ποσό χρέωσης/μέρα</label>
+        <input type="numder" class="form-control" id="chargepd" name="chargepd" step="0.1" placeholder="Ποσό χρέωσης/μέρα">
+      </div>
+      <div class="col-md-3">
+        <label for="totalcharge" class="form-label">Σύνολο Χρέωσης</label>
+        <input type="numder" class="form-control" id="totalcharge" name="totalcharge" step="0.1" placeholder="Σύνολο Χρέωσης">
+      </div>
+      <div class="col-md-3">
+        <label for="payinad" class="form-label">Προκαταβολή</label>
+        <input type="numder" class="form-control" id="payinad" name="payinad" step="0.1" placeholder="Προκαταβολή">
+      </div>
+      <div class="col-md-3">
+        <label for="reminder" class="form-label">Υπόλοιπο</label>
+        <input type="numder" class="form-control" id="reminder" name="reminder" step="0.1" placeholder="Υπόλοιπο">
+      </div>
+      <div class="col-md-3"></div>
+        <button type="submit" class="btn btn-primary">Εισαγωγή</button>
+      </div>
+</form>
+</div>
+
+{% endblock %}
+{% block javascript %}
+<script src="{{ url_for('static',filename='newcontract.js') }}"></script>
+{% endblock %}

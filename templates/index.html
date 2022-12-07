@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Callendar</title>
+{% endblock %}
+
+{% block main %}
+<div class="menutitle"><h2 class="display-6">Ημερολόγιο</h2></div>
+<div class="myconteiner">
+
+  <div id ="cal">
+    <div id="calhead"> 
+        <button id="btnb"  type="button" class="btn" ><i class="bi bi-chevron-compact-left"></i> Προηγούμενη μέρα</button>
+        <button id="btnf"  type="button" class="btn">Επόμενη μέρα<i class="bi bi-chevron-compact-right"></i></button>
+    </div>
+      <table id="ctable">
+        <thead id = "thea">
+        </thead>
+        <tbody id="tbod"">
+        </tbody>
+      </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script> callent = {{ call|tojson }};</script> 
+<script src="{{ url_for('static',filename='index.js') }}"></script>
+{% endblock %}
